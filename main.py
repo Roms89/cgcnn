@@ -82,6 +82,7 @@ args = parser.parse_args(sys.argv[1:])
 
 args.cuda = not args.disable_cuda and torch.cuda.is_available()
 
+
 if args.task == 'regression':
     best_mae_error = 1e10
 else:
@@ -511,3 +512,5 @@ def adjust_learning_rate(optimizer, epoch, k):
 
 if __name__ == '__main__':
     main()
+
+print('args: ', vars(args))
